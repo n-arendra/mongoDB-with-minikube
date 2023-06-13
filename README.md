@@ -1,7 +1,7 @@
 # mongoDB-with-minikube
 
 Procedure: 
-##Step 1:
+# Step 1:
 First create mongo-secret.yml file, then apply it by cmd 
 **kubectl apply -f mongo-secret.yml**
 **kubectl get service**
