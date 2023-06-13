@@ -1,0 +1,39 @@
+//Install Kubectl 
+curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
+chmod +x ./kubectl
+mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
+echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+kubectl version --short --client
+
+// Install docker
+
+// Minikube installation:
+
+curl -LO https://storage.googleapis.com/minikube/releases/v1.22.0/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+//Start VM
+sudo apt-get install -y conntrack
+sudo minikube start --vm-driver=none
+
+minikube start
+(if it throughs this error (Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers) then do the following)
+
+Fix: 
+sudo usermod -aG docker $USER && newgrp docker
+
+minikube start
+
+ubuntu@ip-172-31-41-172:~$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured 
+
+kubectl get nodes
+NAME       STATUS   ROLES                  AGE     VERSION
+minikube   Ready    control-plane,master   3m10s   v1.21.2
+
+ 
