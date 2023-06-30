@@ -34,7 +34,7 @@ First apply only Deployment part
 **kubectl get deployment*
 **kubectl get pods**
 
-This Deployment file container Mongo-express image which will be the front end and this will talk with MongoDB using the credentials.
+This Deployment file contain Mongo-express image which will be the front end and this will talk with MongoDB using the credentials.
 
 Now, the final step is to create the External Service in order to access MongoDB server through browser. 
 This Service can be created in new file or we can use the same existing mongo-express file.
